@@ -3,6 +3,7 @@ const wrapper = document.querySelector('.wrapper') as HTMLDivElement;
 const backwards = document.querySelectorAll('.backwards');
 const onwards = document.querySelectorAll('.onwards');
 const forms = document.querySelectorAll('form')
+const formBackgrounds = document.querySelectorAll<HTMLDivElement>('.form-background')
 
 function advanceWrapper(e: Event) {
   e.preventDefault();
@@ -50,15 +51,16 @@ function wrapperSnap() {
 
   changeBackgroundImage(background, newImage)
 
-  forms.forEach((form, i) => {
-    form.style.backgroundImage = `url(./src/images/form${i}.webp)`
+  formBackgrounds.forEach((form, i) => {
+    if (i == parseInt(formNo)) {
+      form.style.opacity = '0'
+    } else form.style.opacity = '1'
+    changeBackgroundImage(form, `url(./src/images/form${i}.webp)`)
   })
-  currentForm.style.backgroundImage = 'none'
 }
+wrapperSnap()
 
 function changeBackgroundImage(element: HTMLElement, newImageUrl: string) {
-
-
   element.style.backgroundImage = newImageUrl;
-
 }
+

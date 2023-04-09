@@ -21,7 +21,7 @@ main {
   background-image: url('./images/form0.webp');
   background-position: center;
   background-size: cover;
-  transition: 3s ease-in-out;
+  transition: 2s ease-in-out;
 }
 
 .wrapper {
@@ -33,7 +33,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-10%, -50%);
-  transition: 3s ease-in;
+  transition: 2s ease-in;
 }
 
 form {
@@ -42,6 +42,7 @@ form {
   height: 40vh;
   display: flex;
   justify-content: space-around;
+  position: relative;
 }
 
 .inputs {
@@ -78,26 +79,21 @@ form {
   transform: rotateY(180deg);
 }
 
-form:first-child {
-  background-image: 'none'
-}
-
-form:nth-child(2) {
-  background-image: url('./images/form1.webp');
-}
-
-form:nth-child(3) {
-  background-image: url('./images/form2.webp');
-}
-
-form:nth-child(4) {
-  background-image: url('./images/form3.webp');
-}
-
-form:nth-child(5) {
-  background-image: url('./images/form4.webp');
-}
-
 .invisible {
   opacity: 0;
+}
+
+#form0 .form-background,
+#form1 .form-background,
+#form2 .form-background,
+#form3 .form-background,
+#form4 .form-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* Place the background below the form content */
+  transition: opacity 2s ease-in;
 }
