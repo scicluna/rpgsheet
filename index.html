@@ -5,7 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RPGSHEET</title>
+  <audio id="audio" preload="auto">
+    <source src="./src/sound/creation.mp3" type="audio/mpeg">
+  </audio>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/style.css">
   <script defer type="module" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/solid.min.js"></script>
   <script defer type="module" src="./src/main.ts"></script>
@@ -13,6 +19,9 @@
 
 <body>
   <main>
+    <div class="letterwrappertop letterwrapper golden-outline">
+
+    </div>
     <div class="wrapper" data-wrapper="0">
       <form data-form="0" id="form0">
         <div class="backwards invisible">
@@ -20,8 +29,11 @@
         </div>
         <div class="inputs">
           <div class="form-background" style="opacity: 0"></div>
+          <label for="nameinput">Name</label>
           <input id="nameinput" type="text" placeholder="name">
+          <label for="ageinput">Age</label>
           <input id="ageinput" type="text" placeholder="age">
+          <label for="genderinput">Gender</label>
           <input id="genderinput" type="text" placeholder="gender">
         </div>
         <div class="onwards">
@@ -84,6 +96,12 @@
           <button class="onwardsbtn" type="submit"><i class="fas fa-share fa-6x"></i></button>
         </div>
       </form>
+    </div>
+    <div class="letterwrapperbottom letterwrapper golden-outline">
+      <p>And changed depending on the form.</p>
+    </div>
+    <div class="musictoggle">
+      <i class="fa-solid fa-music fa-3x golden-outline"></i>
     </div>
   </main>
 </body>
