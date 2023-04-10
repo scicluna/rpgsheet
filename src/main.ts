@@ -7,7 +7,11 @@ const forms = document.querySelectorAll('form')
 const formBackgrounds = document.querySelectorAll<HTMLDivElement>('.form-background')
 const musicIcon = document.querySelector('.musictoggle')
 const audio = document.getElementById('audio') as HTMLAudioElement
+const raceSelect = document.getElementById('raceinput') as HTMLSelectElement
 audio.volume = 0.05
+audio.loop = true
+
+import { dragonBornStats, dwarfStats, elfStats, gnomeStats, halfOrcStats, halfElfStats, halflingStats, humanStats, tieflingStats } from "./ts/raceinformation";
 
 
 //Dealing with Wrappers
@@ -98,7 +102,10 @@ function handleText(formIndex: string) {
   switch (formIndex) {
     case '0': slowText('And who might you be?', 'top')
       break;
-
+    case '1': slowText('What are your Strengths and Weaknesses?', 'bottom')
+      break;
+    case '2': slowText('And what race might you be?', 'top')
+      break;
   }
 }
 
@@ -126,3 +133,43 @@ function fadeInLetter(letter: HTMLElement, index: number) {
     letter.classList.remove('faded')
   }, index * 250)
 }
+//text effect end
+
+//race display
+function chooseRace(race: string) {
+  switch (race) {
+    case 'dragonborn': raceText(dragonBornStats)
+      break;
+    case 'dwarf': raceText(dwarfStats)
+      break;
+    case 'elf': raceText(elfStats)
+      break;
+    case 'gnome': raceText(gnomeStats)
+      break;
+    case 'half-elf': raceText(halfElfStats)
+      break;
+    case 'half-orc': raceText(halfOrcStats)
+      break;
+    case 'halfling': raceText(halflingStats)
+      break;
+    case 'human': raceText(humanStats)
+      break;
+    case 'tiefling': raceText(tieflingStats)
+      break;
+    default: raceText('')
+  }
+}
+
+function raceText(description: string) {
+  const raceInfo = document.querySelector<HTMLDivElement>('.raceinformation')
+  if (!raceInfo) return
+  raceInfo.innerText = ''
+
+  const infoBlock = document.createElement('p')
+  infoBlock.innerText = description
+  raceInfo.append(infoBlock)
+}
+
+raceSelect.addEventListener('change', (e: any) => {
+  chooseRace(e.target.value)
+})

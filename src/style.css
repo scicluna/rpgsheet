@@ -51,7 +51,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 20vw;
+  width: 100%;
 }
 
 .inputs>input {
@@ -155,4 +155,57 @@ form {
 
 .faded {
   opacity: 0;
+}
+
+/*Race Selection*/
+.racearea {
+  width: 100%;
+  padding: 5px;
+}
+
+#raceinput {
+  width: 100%;
+  height: 30px;
+  margin: 15px;
+}
+
+.raceinformation {
+  min-height: 300px;
+  width: 100%;
+}
+
+/*Race End*/
+/*Stats Start */
+
+.stats {
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modifier {
+  margin-left: 15px;
+}
+
+.rowend {
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.row>label {
+  width: 50px;
+}
+
+.row>input {
+  height: 30px;
+  width: 40px;
+}
+
+#statpoints {
+  margin-left: 10px;
 }
