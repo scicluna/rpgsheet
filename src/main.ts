@@ -9,11 +9,12 @@ const musicIcon = document.querySelector('.musictoggle')
 const audio = document.getElementById('audio') as HTMLAudioElement
 const raceSelect = document.getElementById('raceinput') as HTMLSelectElement
 const statInputs = document.querySelectorAll<HTMLInputElement>('.stat')
+const classSelect = document.getElementById('classinput') as HTMLDivElement
 audio.volume = 0.05
 audio.loop = true
 
 import { dragonBornStats, dwarfStats, elfStats, gnomeStats, halfOrcStats, halfElfStats, halflingStats, humanStats, tieflingStats } from "./ts/raceinformation";
-
+import { artificer, barbarian, bard, cleric, druid, fighter, monk, paladin, ranger, rogue, sorcerer, warlock, wizard } from "./ts/classinformation";
 
 //Dealing with Wrappers
 function advanceWrapper(e: Event) {
@@ -101,11 +102,13 @@ function handleText(formIndex: string) {
     wrapper.innerHTML = ''
   })
   switch (formIndex) {
-    case '0': slowText('And who might you be?', 'top')
+    case '0': slowText('Who might you be?', 'top')
       break;
     case '1': slowText('What are your Strengths and Weaknesses?', 'bottom')
       break;
-    case '2': slowText('And what race might you be?', 'top')
+    case '2': slowText('Which lineage do you belong to?', 'top')
+      break;
+    case '3': slowText('What path do you walk?', 'bottom')
       break;
   }
 }
@@ -177,7 +180,7 @@ raceSelect.addEventListener('change', (e: any) => {
 //race display end
 
 //stat handling
-function handleStatChange(e: any) {
+function handleStatChange() {
   const modifiers = document.querySelectorAll<HTMLParagraphElement>('.modifier')
   const pointsRemaining = document.querySelector<HTMLHeadElement>('#statpoints')
 
@@ -202,4 +205,52 @@ function handleStatChange(e: any) {
 }
 statInputs.forEach(statInput => {
   statInput.addEventListener('change', handleStatChange)
+})
+//Stat handling end
+
+//Class handling
+function chooseClass(className: string) {
+  switch (className) {
+    case 'artificer': classText(artificer)
+      break;
+    case 'barbarian': classText(barbarian)
+      break;
+    case 'bard': classText(bard)
+      break;
+    case 'cleric': classText(cleric)
+      break;
+    case 'druid': classText(druid)
+      break;
+    case 'fighter': classText(fighter)
+      break;
+    case 'monk': classText(monk)
+      break;
+    case 'paladin': classText(paladin)
+      break;
+    case 'ranger': classText(ranger)
+      break;
+    case 'rogue': classText(rogue)
+      break;
+    case 'sorcerer': classText(sorcerer)
+      break;
+    case 'warlock': classText(warlock)
+      break;
+    case 'wizard': classText(wizard)
+      break;
+    default: classText('')
+  }
+}
+
+function classText(description: string) {
+  const classInfo = document.querySelector<HTMLDivElement>('.classinformation')
+  if (!classInfo) return
+  classInfo.innerText = ''
+
+  const infoBlock = document.createElement('p')
+  infoBlock.innerText = description
+  classInfo.append(infoBlock)
+}
+
+classSelect.addEventListener('change', (e: any) => {
+  chooseClass(e.target.value)
 })
