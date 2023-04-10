@@ -54,6 +54,10 @@ form {
   width: 100%;
 }
 
+.personal>input {
+  width: 50%;
+}
+
 .inputs>input {
   margin: 15px;
   height: 30px;
@@ -190,10 +194,11 @@ form {
 
 .modifier {
   margin-left: 15px;
+  width: 30px;
 }
 
 .rowend {
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 15px;
 }
 
@@ -203,7 +208,7 @@ form {
 
 .row>input {
   height: 30px;
-  width: 40px;
+  width: 45px;
 }
 
 #statpoints {

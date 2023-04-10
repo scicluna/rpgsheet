@@ -27,7 +27,7 @@
         <div class="backwards invisible">
           <button class="backwardsbtn" type="submit"><i class="fas fa-share fa-6x"></i></button>
         </div>
-        <div class="inputs">
+        <div class="inputs personal">
           <div class="form-background" style="opacity: 0"></div>
           <label for="nameinput">Name</label>
           <input id="nameinput" type="text" placeholder="name">
@@ -52,33 +52,33 @@
           </div>
           <div class="row">
             <label for="strinput">Str</label>
-            <input id="strinput" type="number" value="10" min="7" max="18">
-            <p id="strmodifer" class="modifier">0</p>
+            <input id="strinput" class="stat" type="number" value="8" min="8" max="15">
+            <p id="strmodifer" class="modifier">-1</p>
           </div>
           <div class="row">
             <label for="dexinput">Dex</label>
-            <input id="dexinput" type="number" value="10" min="7" max="18">
-            <p id="dexmodifer" class="modifier">0</p>
+            <input id="dexinput" class="stat" type="number" value="8" min="8" max="15">
+            <p id="dexmodifer" class="modifier">-1</p>
           </div>
           <div class="row">
             <label for="coninput">Con</label>
-            <input id="coninput" type="number" value="10" min="7" max="18">
-            <p id="conmodifer" class="modifier">0</p>
+            <input id="coninput" class="stat" type="number" value="8" min="8" max="15">
+            <p id="conmodifer" class="modifier">-1</p>
           </div>
           <div class="row">
             <label for="intinput">Wis</label>
-            <input id="intinput" type="number" value="10" min="7" max="18">
-            <p id="intmodifer" class="modifier">0</p>
+            <input id="intinput" class="stat" type="number" value="8" min="8" max="15">
+            <p id="intmodifer" class="modifier">-1</p>
           </div>
           <div class="row">
             <label for="wisinput">Int</label>
-            <input id="wisinput" type="number" value="10" min="7" max="18">
-            <p id="wismodifer" class="modifier">0</p>
+            <input id="wisinput" class="stat" type="number" value="8" min="8" max="15">
+            <p id="wismodifer" class="modifier">-1</p>
           </div>
           <div class="row">
             <label for="chainput">Cha</label>
-            <input id="chainput" type="number" value="10" min="7" max="18">
-            <p id="chamodifer" class="modifier">0</p>
+            <input id="chainput" class="stat" type="number" value="8" min="8" max="15">
+            <p id="chamodifer" class="modifier">-1</p>
           </div>
         </div>
         <div class="onwards">
@@ -95,7 +95,7 @@
             <label for="raceinput">Race</label>
             <select id="raceinput">
               <option value="placeholder">Select Your Race</option>
-              <option value="dragonborn">Dragonborn</option>
+              <option value="barbarian">barbarian</option>
               <option value="dwarf">Dwarf</option>
               <option value="elf">Elf</option>
               <option value="gnome">Gnome</option>
@@ -116,11 +116,24 @@
         <div class="backwards">
           <button class="backwardsbtn" type="submit"><i class="fas fa-share fa-6x"></i></button>
         </div>
-        <div class="inputs">
-          <div class="form-background"></div>
-          <input id="nameinput" type="text" placeholder="name">
-          <input id="ageinput" type="text" placeholder="age">
-          <input id="genderinput" type="text" placeholder="gender">
+        <div class="classarea">
+          <label for="classinput">Class</label>
+          <select id="classinput">
+            <option value="placeholder">Select Your Class</option>
+            <option value="barbarian">Barbarian</option>
+            <option value="bard">Bard</option>
+            <option value="cleric">Cleric</option>
+            <option value="druid">Druid</option>
+            <option value="fighter">Fighter</option>
+            <option value="monk">Monk</option>
+            <option value="paladin">Paladin</option>
+            <option value="ranger">Ranger</option>
+            <option value="rogue">Rogue</option>
+            <option value="sorcerer">Sorcerer</option>
+            <option value="warlock">Warlock</option>
+            <option value="wizard">Wizard</option>
+          </select>
+          <div class="classinformation"></div>
         </div>
         <div class="onwards">
           <button class="onwardsbtn" type="submit"><i class="fas fa-share fa-6x"></i></button>

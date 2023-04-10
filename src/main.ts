@@ -8,6 +8,7 @@ const formBackgrounds = document.querySelectorAll<HTMLDivElement>('.form-backgro
 const musicIcon = document.querySelector('.musictoggle')
 const audio = document.getElementById('audio') as HTMLAudioElement
 const raceSelect = document.getElementById('raceinput') as HTMLSelectElement
+const statInputs = document.querySelectorAll<HTMLInputElement>('.stat')
 audio.volume = 0.05
 audio.loop = true
 
@@ -172,4 +173,33 @@ function raceText(description: string) {
 
 raceSelect.addEventListener('change', (e: any) => {
   chooseRace(e.target.value)
+})
+//race display end
+
+//stat handling
+function handleStatChange(e: any) {
+  const modifiers = document.querySelectorAll<HTMLParagraphElement>('.modifier')
+  const pointsRemaining = document.querySelector<HTMLHeadElement>('#statpoints')
+
+  if (!pointsRemaining) return
+
+  let total = 0
+  statInputs.forEach((stat, i) => {
+    const score = stat.value
+
+    if (parseInt(score) > 15) {
+      stat.value = '8'
+      return
+    }
+    modifiers[i].innerText = (Math.floor((parseInt(score) - 10) / 2)).toString()
+
+    if (parseInt(score) < 14) {
+      total += parseInt(score) - 8
+    } else total += parseInt(score) == 14 ? parseInt(score) - 7 : parseInt(score) - 6
+  })
+
+  pointsRemaining.innerText = (27 - total).toString()
+}
+statInputs.forEach(statInput => {
+  statInput.addEventListener('change', handleStatChange)
 })
