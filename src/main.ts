@@ -6,15 +6,18 @@ const onwards = document.querySelectorAll('.onwards');
 const forms = document.querySelectorAll('form')
 const formBackgrounds = document.querySelectorAll<HTMLDivElement>('.form-background')
 const musicIcon = document.querySelector('.musictoggle')
-const audio = document.getElementById('audio') as HTMLAudioElement
 const raceSelect = document.getElementById('raceinput') as HTMLSelectElement
 const statInputs = document.querySelectorAll<HTMLInputElement>('.stat')
 const classSelect = document.getElementById('classinput') as HTMLDivElement
+const backgroundSelect = document.getElementById('backgroundinput') as HTMLDivElement
+
+const audio = document.getElementById('audio') as HTMLAudioElement
 audio.volume = 0.05
 audio.loop = true
 
 import { dragonBornStats, dwarfStats, elfStats, gnomeStats, halfOrcStats, halfElfStats, halflingStats, humanStats, tieflingStats } from "./ts/raceinformation";
 import { artificer, barbarian, bard, cleric, druid, fighter, monk, paladin, ranger, rogue, sorcerer, warlock, wizard } from "./ts/classinformation";
+import { acolyte, charlatan, criminal, entertainer, folkhero, gladiator, guildartisan, hermit, knight, noble, outlander, pirate, sage, sailor, soldier, urchin } from "./ts/backgroundinformation";
 
 //Dealing with Wrappers
 function advanceWrapper(e: Event) {
@@ -109,6 +112,8 @@ function handleText(formIndex: string) {
     case '2': slowText('Which lineage do you belong to?', 'top')
       break;
     case '3': slowText('What path do you walk?', 'bottom')
+      break;
+    case '4': slowText('Before you adventured, what did you do?', 'top')
       break;
   }
 }
@@ -257,17 +262,59 @@ classSelect.addEventListener('change', (e: Event) => {
 //Class handling end
 
 //Background handling start
+function chooseBackground(background: string) {
+  switch (background) {
+    case 'acolyte': backgroundText(acolyte)
+      break;
+    case 'charlatan': backgroundText(charlatan)
+      break;
+    case 'criminal': backgroundText(criminal)
+      break;
+    case 'entertainer': backgroundText(entertainer)
+      break;
+    case 'folkhero': backgroundText(folkhero)
+      break;
+    case 'gladiator': backgroundText(gladiator)
+      break;
+    case 'guildartisan': backgroundText(guildartisan)
+      break;
+    case 'hermit': backgroundText(hermit)
+      break;
+    case 'knight': backgroundText(knight)
+      break;
+    case 'noble': backgroundText(noble)
+      break;
+    case 'outlander': backgroundText(outlander)
+      break;
+    case 'pirate': backgroundText(pirate)
+      break;
+    case 'sage': backgroundText(sage)
+      break;
+    case 'sailor': backgroundText(sailor)
+      break;
+    case 'soldier': backgroundText(soldier)
+      break;
+    case 'urchin': backgroundText(urchin)
+      break;
+    default: backgroundText('')
+  }
+}
 
+function backgroundText(description: string) {
+  const backgroundInfo = document.querySelector<HTMLDivElement>('.backgroundinformation')
+  if (!backgroundInfo) return
+  backgroundInfo.innerText = ''
+
+  const infoBlock = document.createElement('p')
+  infoBlock.innerText = description
+  backgroundInfo.append(infoBlock)
+}
+
+backgroundSelect.addEventListener('change', (e: Event) => {
+  chooseBackground((e.target as HTMLSelectElement).value)
+})
 //Background handling end
 
-//Equipment handling start
-
-//Equipment handling end
-
-//Spell handling start??
-
-//Spell handling end??
- 
 //Handle Submission start
 
 //Handle Submission end

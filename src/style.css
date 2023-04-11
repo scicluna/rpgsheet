@@ -222,8 +222,8 @@ form {
 }
 
 /*Stat End*/
-
 /*Class Start*/
+
 .classarea {
   width: 100%;
   padding: 5px;
@@ -242,10 +242,32 @@ form {
 }
 
 .raceinformation>p,
-.classinformation>p {
+.classinformation>p,
+.backgroundinformation>p {
   background-color: rgba(0, 0, 0, 0.187);
   color: white
 }
+
+/*Class End*/
+/* Background Start */
+
+.backgroundarea {
+  width: 100%;
+  padding: 5px;
+}
+
+#backgroundinput {
+  width: 100%;
+  height: 30px;
+  margin: 15px;
+}
+
+.backgroundinformation {
+  min-height: 300px;
+  width: 100%;
+  word-wrap: normal;
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------*/
 /* --------------------------------------------CHARSHEET-------------------------------------------------------------*/
