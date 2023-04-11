@@ -256,3 +256,24 @@ classSelect.addEventListener('change', (e: Event) => {
 })
 //Class handling end
 
+//Background handling start
+
+//Background handling end
+
+//Equipment handling start
+
+//Equipment handling end
+
+//Spell handling start??
+
+//Spell handling end??
+ 
+//Handle Submission start
+
+//Handle Submission end
+
+//Generate Char Sheet start
+
+//Generate Char Sheet end
+
+
