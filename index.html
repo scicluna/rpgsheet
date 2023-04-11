@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <main class="hide">
+  <main class="">
     <div class="letterwrappertop letterwrapper golden-outline">
 
     </div>
@@ -116,26 +116,28 @@
         <div class="backwards">
           <button class="backwardsbtn" type="submit"><i class="fas fa-share fa-6x"></i></button>
         </div>
-        <div class="classarea">
+        <div class="inputs">
           <div class="form-background"></div>
-          <label for="classinput">Class</label>
-          <select id="classinput">
-            <option value="placeholder">Select Your Class</option>
-            <option value="artificer">Artificer</option>
-            <option value="barbarian">Barbarian</option>
-            <option value="bard">Bard</option>
-            <option value="cleric">Cleric</option>
-            <option value="druid">Druid</option>
-            <option value="fighter">Fighter</option>
-            <option value="monk">Monk</option>
-            <option value="paladin">Paladin</option>
-            <option value="ranger">Ranger</option>
-            <option value="rogue">Rogue</option>
-            <option value="sorcerer">Sorcerer</option>
-            <option value="warlock">Warlock</option>
-            <option value="wizard">Wizard</option>
-          </select>
-          <div class="classinformation"></div>
+          <div class="classarea">
+            <label for="classinput">Class</label>
+            <select id="classinput">
+              <option value="placeholder">Select Your Class</option>
+              <option value="artificer">Artificer</option>
+              <option value="barbarian">Barbarian</option>
+              <option value="bard">Bard</option>
+              <option value="cleric">Cleric</option>
+              <option value="druid">Druid</option>
+              <option value="fighter">Fighter</option>
+              <option value="monk">Monk</option>
+              <option value="paladin">Paladin</option>
+              <option value="ranger">Ranger</option>
+              <option value="rogue">Rogue</option>
+              <option value="sorcerer">Sorcerer</option>
+              <option value="warlock">Warlock</option>
+              <option value="wizard">Wizard</option>
+            </select>
+            <div class="classinformation"></div>
+          </div>
         </div>
         <div class="onwards">
           <button class="onwardsbtn" type="submit"><i class="fas fa-share fa-6x"></i></button>
@@ -178,7 +180,7 @@
   </main>
 
   <!-- Begin Main Character Sheet -->
-  <form class="charsheet">
+  <form class="charsheet hide">
     <header>
       <section class="charname">
         <label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" />
