@@ -174,8 +174,8 @@ function raceText(description: string) {
   raceInfo.append(infoBlock)
 }
 
-raceSelect.addEventListener('change', (e: any) => {
-  chooseRace(e.target.value)
+raceSelect.addEventListener('change', (e: Event) => {
+  chooseRace((e.target as HTMLSelectElement).value)
 })
 //race display end
 
@@ -251,6 +251,8 @@ function classText(description: string) {
   classInfo.append(infoBlock)
 }
 
-classSelect.addEventListener('change', (e: any) => {
-  chooseClass(e.target.value)
+classSelect.addEventListener('change', (e: Event) => {
+  chooseClass((e.target as HTMLSelectElement).value)
 })
+//Class handling end
+
